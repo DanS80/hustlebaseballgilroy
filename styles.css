@@ -24,6 +24,23 @@ header h1 {
     color: #ffffff;
     flex-grow: 1;
     text-align: center;
+    font-size: 3em; /* Enlarge the text */
+    position: relative;
+}
+
+header h1::before, header h1::after {
+    content: url('baseball.png'); /* Add baseball image */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header h1::before {
+    left: -50px; /* Adjust as needed */
+}
+
+header h1::after {
+    right: -50px; /* Adjust as needed */
 }
 
 header img {

@@ -8,18 +8,22 @@ header {
     background-color: #1e3a8a; /* Medium blue */
     padding: 20px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header h1 {
     margin: 0;
     color: #ffffff;
+    flex-grow: 1;
+    text-align: center;
 }
 
 header img {
-    max-width: 50px; /* Reduced size */
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
+    height: 100%; /* Same height as the header */
+    max-height: 60px; /* Adjust as needed */
+    margin-right: 20px;
 }
 
 nav ul {

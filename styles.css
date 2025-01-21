@@ -14,7 +14,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: calc(100% - 180px); /* Adjust for the width of the nav */
+    margin-left: 180px; /* Adjust for the width of the nav */
     font-family: 'Bebas Neue', cursive; /* Use Bebas Neue font */
 }
 
@@ -34,7 +35,7 @@ header img {
 nav {
     background-color: #1e3a8a; /* Medium blue */
     padding: 20px;
-    width: 200px;
+    width: 180px; /* Reduced width */
     height: 100vh;
     position: fixed;
     top: 0;
@@ -69,7 +70,7 @@ nav ul li a:hover {
 }
 
 main {
-    margin-left: 220px; /* Adjust for the width of the nav */
+    margin-left: 200px; /* Adjust for the width of the nav */
     padding: 20px;
     flex-grow: 1;
 }
@@ -85,6 +86,6 @@ footer {
     color: #ffffff;
     position: fixed;
     bottom: 0;
-    left: 220px; /* Adjust for the width of the nav */
-    width: calc(100% - 220px);
+    left: 200px; /* Adjust for the width of the nav */
+    width: calc(100% - 200px);
 }

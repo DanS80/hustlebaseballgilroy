@@ -7,16 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Hustle Baseball Gilroy</h1>
-        <nav>
-            <ul>
-                <li><a href="#team-info">Team Information</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#fundraising">Fundraising</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
     <main>
         <section id="team-info">
             <h2>Team Information</h2>
@@ -33,6 +24,16 @@
             <p>Current Fundraiser: Buy football squares for the NFC and AFC championship games!</p>
             <p>Each square costs $25. Contact us to purchase your squares and support our team.</p>
         </section>
+        <section id="board-members">
+            <h2>Board Members</h2>
+            <p>Meet the dedicated board members of Hustle Baseball Gilroy:</p>
+            <ul>
+                <li>John Doe - President</li>
+                <li>Jane Smith - Vice President</li>
+                <li>Jim Brown - Treasurer</li>
+                <li>Emily White - Secretary</li>
+            </ul>
+        </section>
         <section id="contact-us">
             <h2>Contact Us</h2>
             <p>If you have any questions or need more information, please reach out to us:</p>
@@ -43,5 +44,12 @@
     <footer>
         <p>&copy; 2023 Hustle Baseball Gilroy. All rights reserved.</p>
     </footer>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

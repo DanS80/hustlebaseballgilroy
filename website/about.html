@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hustle Baseball</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+    
+    <div class="main-content-wrapper">
+        <img src="logo.png" alt="" class="background-logo">
+        <section class="container about-content">
+            <h2>About Hustle Baseball</h2>
+            <p>Welcome to Hustle Baseball, established in 2024. We are dedicated to developing young athletes both on and off the field.</p>
+
+            <h3>Our Mission</h3>
+            <p>To provide a competitive baseball environment that focuses on player development, sportsmanship, and building character through America's favorite pastime.</p>
+
+            <h3>Our Teams</h3>
+            <div class="team-member">
+                <h4>10U AAA</h4>
+                <p>Head Coach: [Coach Name]</p>
+                <p>Practice Schedule: [Schedule Details]</p>
+            </div>
+
+            <div class="team-member">
+                <h4>10U AA Blue</h4>
+                <p>Head Coach: [Coach Name]</p>
+                <p>Practice Schedule: [Schedule Details]</p>
+            </div>
+
+            <h3>Contact Us</h3>
+            <p>Email: hustlebaseballgilroy@gmail.com</p>
+            <p>Phone: (555) 123-4567</p>
+        </section>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Load header and footer
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+        
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+</body>
+</html>

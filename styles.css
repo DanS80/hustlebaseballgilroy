@@ -5,12 +5,16 @@
 
 /* Remove or comment out the Bebas Neue import */
 /* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.2;
+    font-size: 16px;
 }
 
 header {
@@ -501,4 +505,16 @@ button[type="submit"]:hover {
     margin-bottom: 0.5rem;
 }
 
-/* ...existing code... */
+.bebas-neue {
+    font-family: 'Sakana', sans-serif;
+}
+.small-text {
+    font-size: 0.8em;
+}
+nav li {
+    font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}

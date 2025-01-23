@@ -151,3 +151,52 @@ footer {
     pointer-events: none;
     object-fit: cover;
 }
+
+.coach-profile {
+    display: flex;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.coach-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 1.5rem;
+}
+
+.coach-info {
+    flex: 1;
+}
+
+.coach-info h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.team-info {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.team-info ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .coach-profile {
+        flex-direction: column;
+    }
+    
+    .coach-photo {
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+}

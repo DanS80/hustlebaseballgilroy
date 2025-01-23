@@ -194,7 +194,7 @@ footer {
 
 .bebas-neue {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5em;
+    font-size: 3.5em;  /* Changed from 2.5em to 3.5em */
     letter-spacing: 1px;
 }
 

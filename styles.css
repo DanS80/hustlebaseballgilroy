@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: 'Sakana';
+    src: url('sakana.regular.ttf') format('truetype');
+}
+
+/* Remove or comment out the Bebas Neue import */
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
 
 body {
     font-family: Arial, sans-serif;
@@ -192,9 +198,9 @@ footer {
     border-bottom: 1px solid #eee;
 }
 
-.bebas-neue {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5em;  /* Changed from 2.5em to 3.5em */
+.bebas-neue {  /* We can rename this class later if desired */
+    font-family: 'Sakana', sans-serif;
+    font-size: 3.0em;
     letter-spacing: 1px;
 }
 

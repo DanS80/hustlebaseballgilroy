@@ -22,13 +22,17 @@ header {
     padding: 10px 0;
 }
 
+/* ...existing code... */
+
 .header-content {
     display: flex;
     align-items: center;
-    max-width: 1200px;  /* Match container width */
+    max-width: 1110px;  /* Match container width */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;  /* Changed from 20px to 30px to match container padding */
 }
+
+/* ...existing code... */
 
 .logo {
     height: 100px;

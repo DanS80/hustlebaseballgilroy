@@ -8,16 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     async function loadImages() {
         try {
-            const response = await fetch('photos/');
-            const data = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, 'text/html');
-            const links = Array.from(doc.getElementsByTagName('a'));
-            
-            images = links
-                .map(link => link.href)
-                .filter(href => href.match(/\.(jpg|jpeg|png|gif)$/i));
-            
+            const response = await fetch('photos/image-index.json');
+            const data = await response.json();
+            images = data.images.map(img => img.path);
             initializeSlideshows();
         } catch (error) {
             console.error('Error loading images:', error);

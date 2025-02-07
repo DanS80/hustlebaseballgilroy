@@ -1,4 +1,4 @@
-## Super Bowl Squares Fundraiser! 🏈
+## Super Bowl Squares Fundraiser! 🏈 !!!CLOSED!!!
 
 ##### *Posted on Jan 29, 2025*
 

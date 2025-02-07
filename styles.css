@@ -213,7 +213,7 @@ footer {
     border-bottom: 1px solid #eee;
 }
 
-.bebas-neue {  /* We can rename this class later if desired */
+.org-title {  /* Renamed from bebas-neue */
     font-family: 'Sakana', sans-serif;
     font-size: 3.0em;
     letter-spacing: 1px;
@@ -515,9 +515,6 @@ button[type="submit"]:hover {
     margin-bottom: 0.5rem;
 }
 
-.bebas-neue {
-    font-family: 'Sakana', sans-serif;
-}
 .small-text {
     font-size: 0.8em;
 }

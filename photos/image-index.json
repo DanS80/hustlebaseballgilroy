@@ -1,14 +1,19 @@
 {
   "images": [
     {
-      "path": "photos/IMG_8526.png",
-      "name": "IMG_8526",
-      "date": 1738174660.7137492
+      "path": "photos/IMG_8509.jpg",
+      "name": "IMG_8509",
+      "date": 1738888439.2084584
     },
     {
-      "path": "photos/IMG_8527.png",
+      "path": "photos/IMG_8526.jpg",
+      "name": "IMG_8526",
+      "date": 1738888439.2294044
+    },
+    {
+      "path": "photos/IMG_8527.jpg",
       "name": "IMG_8527",
-      "date": 1738174620.9193025
+      "date": 1738888439.219176
     }
   ]
 }

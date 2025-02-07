@@ -99,16 +99,22 @@ nav a:hover {
 }
 
 nav a::after {
+    content: '';  /* Remove default arrow */
+    display: none;
+}
+
+.dropdown > a::after {
     content: '▼';
+    display: inline-block;
     font-size: 0.7em;
     margin-left: 5px;
     position: relative;
     top: -2px;
-    opacity: 1; /* always visible */
+    transition: transform 0.2s ease;
 }
 
-nav a:hover::after {
-    opacity: 1;
+.dropdown:hover > a::after {
+    transform: rotate(180deg);
 }
 
 .dropdown {
@@ -116,27 +122,20 @@ nav a:hover::after {
     display: inline-block;
 }
 
+/* Add invisible bridge between nav item and dropdown */
+/* Remove the ::before pseudo-element completely */
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: rgb(137, 189, 231);
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     z-index: 1;
     border-radius: 3px;
-    margin-top: 0;           /* Changed from 5px to 0 */
-    padding-top: 3px;        /* Reduced from 5px */
-    top: 100%;              /* Added to position directly below parent */
-}
-
-/* Add this new style to create an invisible area that maintains hover */
-.dropdown::after {
-    content: '';
-    position: absolute;
-    height: 20px;           /* Adjust this value as needed */
-    width: 100%;
-    bottom: -20px;         /* Adjust this value as needed */
-    left: 0;
+    margin-top: 0;  /* Remove the gap */
+    border-top: 2px solid rgb(49, 140, 216);
+    padding-top: 2px;  /* Small padding to show the border */
 }
 
 .dropdown-content li {
@@ -146,12 +145,18 @@ nav a:hover::after {
 
 .dropdown-content a {
     color: #0f0f0f;
-    padding: 8px 16px;       /* Reduced top/bottom padding from 12px to 8px */
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
     display: block;
     text-align: left;
     background-color: transparent;
     font-size: 0.9em;        /* Added to make font slightly smaller */
+    white-space: nowrap;
+}
+
+.dropdown-content li:last-child a {
+    border-bottom: none;
 }
 
 .dropdown-content a:hover {
@@ -316,9 +321,8 @@ footer {
 
 /* Contact page specific styles */
 .contact-content {
-    max-width: 960px;  /* Also updating contact page for consistency */
     margin: 0 auto;
-    padding: 2rem;
+    padding: 20px;
 }
 
 .contact-info {
@@ -366,9 +370,8 @@ button[type="submit"]:hover {
 
 /* Schedule page specific styles */
 .schedule-content {
-    max-width: 960px;  /* Changed from 800px to match other pages */
     margin: 0 auto;
-    padding: 2rem;
+    padding: 20px;
 }
 
 .schedule-message {
@@ -416,7 +419,7 @@ button[type="submit"]:hover {
         position: static;
         width: 100%;
         box-shadow: none;
-        margin-top: 2px;
+        margin-top: 2px;  /* Keep small gap only on mobile */
     }
 
     .dropdown::after {

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Sakana';
-    src: url('sakana.regular.ttf') format('truetype');
+    src: url('/fonts/sakana.regular.ttf') format('truetype');
 }
 
 /* Remove or comment out the Bebas Neue import */

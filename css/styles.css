@@ -58,6 +58,19 @@ header {
     display: block;
 }
 
+.header-text .org-title {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .header-text .org-title {
+        width: 100%;
+    }
+}
+
 h1 { margin: 0; }
 
 nav ul {

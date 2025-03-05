@@ -753,3 +753,88 @@ nav li {
 }
 
 /* ...existing code... */
+
+/* Calendar Styles */
+.event-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-width: 400px;
+    width: 90%;
+}
+
+.event-popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.event-popup.show {
+    display: block;
+}
+
+.fc-event-title {
+    white-space: normal !important;
+    overflow: visible;
+    line-height: 1.2;
+    padding: 1px 2px;
+}
+
+.fc-daygrid-event {
+    white-space: normal !important;
+    display: block;
+}
+
+.fc-daygrid-day-events {
+    min-height: fit-content;
+}
+
+/* ...existing code... */
+
+/* Calendar View Button Styles */
+.fc .fc-button-primary:focus,
+.fc .fc-button-primary:not(:disabled):active:focus,
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus {
+    box-shadow: none;
+}
+
+.fc .fc-button:focus {
+    outline: none;
+}
+
+/* ...existing code... */
+
+/* Event Popup Styles */
+.event-popup h3 {
+    color: rgb(49, 140, 216);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.event-popup .datetime {
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+.event-popup .location {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.event-popup .description {
+    line-height: 1.4;
+    color: #333;
+}
+
+/* ...existing code... */

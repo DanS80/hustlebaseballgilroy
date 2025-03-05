@@ -144,7 +144,7 @@ nav a::after {
     background-color: rgb(137, 189, 231);
     min-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    z-index: 1;
+    z-index: 10000;
     border-radius: 3px;
     margin-top: 0;  /* Remove the gap */
     border-top: 2px solid rgb(49, 140, 216);
@@ -556,6 +556,11 @@ nav li {
     text-decoration: none;
 }
 
+nav {
+    position: relative;
+    z-index: 9999;
+}
+
 /* ...existing code... */
 
 .gallery-link {
@@ -796,6 +801,11 @@ nav li {
 
 .fc-daygrid-day-events {
     min-height: fit-content;
+}
+
+.fc {
+    z-index: 1;
+    position: relative;
 }
 
 /* ...existing code... */

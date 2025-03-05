@@ -133,6 +133,12 @@ nav a::after {
 .dropdown {
     position: relative;
     display: inline-block;
+    height: 100%;
+}
+
+.dropdown > a {
+    height: 100%;
+    display: inline-block;
 }
 
 /* Add invisible bridge between nav item and dropdown */
@@ -141,14 +147,16 @@ nav a::after {
 .dropdown-content {
     display: none;
     position: absolute;
+    top: calc(100% + 0.2px);  /* Position it just below nav, accounting for border */
+    left: 0;
     background-color: rgb(137, 189, 231);
     min-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     z-index: 10000;
     border-radius: 3px;
     margin-top: 0;  /* Remove the gap */
-    border-top: 2px solid rgb(49, 140, 216);
-    padding-top: 2px;  /* Small padding to show the border */
+    border-top: 3px solid rgb(49, 140, 216);
+    padding-top: 0px;  /* Small padding to show the border */
 }
 
 .dropdown-content li {
@@ -559,6 +567,7 @@ nav li {
 nav {
     position: relative;
     z-index: 9999;
+    background-color: rgb(137, 189, 231);
 }
 
 /* ...existing code... */

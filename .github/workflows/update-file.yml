@@ -12,11 +12,14 @@ jobs:
 
       - name: Set environment variable
         run: echo "gc_token=${{ secrets.GC_TOKEN }}" >> $GITHUB_ENV
-
+      
       - name: Download file
         run: |
           curl -o hustle-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=8cceec49-6814-4a22-a7c9-e4e1955f810d&token=${{ env.gc_token }}"
-
+      
+      - name: Remove DTSTAMP
+        run: sed -i '/^DTSTAMP:/d' hustle-temp.ics
+  
       - name: Commit and push changes
         run: |
           if cmp --silent hustle-temp.ics hustle.ics; then

@@ -566,7 +566,7 @@ nav li {
 
 nav {
     position: relative;
-    z-index: 9999;
+    z-index: 1000;
     background-color: rgb(137, 189, 231);
 }
 

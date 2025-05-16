@@ -10,7 +10,7 @@ We will be at Gilroy Sports Park from 6-8pm, on the A2 field (the field to the r
 
 If you have any questions at all, please reach out to us at tryouts@hustlebaseballgilroy.org and we will get back to you ASAP!
 
-<img src="/images/tryouts.png" alt="Fall 2025 Tryouts" width="500" class="announcement-image">
+<img src="/images/fall-2025-tryouts.png" alt="Fall 2025 Tryouts" width="500" class="announcement-image">
 
 
 

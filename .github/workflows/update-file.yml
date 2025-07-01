@@ -27,6 +27,27 @@ jobs:
             rm hustle-temp.ics
             exit 0
           else
+            # Validate ICS file format
+            if ! grep -q "^BEGIN:VCALENDAR" hustle-temp.ics || ! grep -q "^END:VCALENDAR" hustle-temp.ics; then
+              echo "Invalid ICS file format - missing BEGIN:VCALENDAR or END:VCALENDAR"
+              rm hustle-temp.ics
+              exit 1
+            fi
+            
+            # Check for required VEVENT components
+            if ! grep -q "^BEGIN:VEVENT" hustle-temp.ics; then
+              echo "Invalid ICS file format - no VEVENT components found"
+              rm hustle-temp.ics
+              exit 1
+            fi
+            
+            # Validate line endings (should be CRLF for ICS files)
+            if file hustle-temp.ics | grep -q "CRLF"; then
+              echo "ICS file has proper CRLF line endings"
+            else
+              echo "Warning: ICS file may not have proper CRLF line endings"
+            fi
+
             echo "Files are different"
             mv hustle-temp.ics hustle.ics
             git config --global user.email "github-actions[bot]@users.noreply.github.com"

@@ -1,4 +1,17 @@
-## Hustle Baseball 10U/11U Tryouts!
+## Hustle Baseball Tryouts Completed
+
+##### *Posted on June 18, 2025*
+
+What an incredible tryout session! We had an amazing turnout with so many talented young athletes and supportive families. The energy on the field was electric, and we were blown away by the skill level and enthusiasm of all the players who came out.
+
+A huge thank you to everyone who participated - the kids who gave it their all, the parents who brought them out, and all the volunteers who helped make the day run smoothly. Your passion for baseball and commitment to the sport is truly inspiring.
+
+We're excited to announce that our tryouts have been completed, and we're thrilled with the talent we've seen. Stay tuned for more updates as we finalize our rosters for the upcoming season!
+
+Thank you again to the entire Gilroy baseball community for making this such a memorable and successful event.
+
+
+## Hustle Baseball 10U/11U Tryouts! - CLOSED!
 
 ##### *Posted on May 9, 2025*
 

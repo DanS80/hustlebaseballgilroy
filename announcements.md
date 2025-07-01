@@ -10,6 +10,7 @@ We're excited to announce that our tryouts have been completed, and we're thrill
 
 Thank you again to the entire Gilroy baseball community for making this such a memorable and successful event.
 
+------
 
 ## Hustle Baseball 10U/11U Tryouts! - CLOSED!
 

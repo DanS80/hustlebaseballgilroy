@@ -1,6 +1,6 @@
 ## Hustle Baseball Tryouts Completed
 
-##### *Posted on June 18, 2025*
+##### *Posted on June 30, 2025*
 
 What an incredible tryout session! We had an amazing turnout with so many talented young athletes and supportive families. The energy on the field was electric, and we were blown away by the skill level and enthusiasm of all the players who came out.
 

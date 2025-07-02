@@ -30,6 +30,7 @@ jobs:
             # Validate ICS file format
             if ! grep -q "^BEGIN:VCALENDAR" hustle-temp.ics || ! grep -q "^END:VCALENDAR" hustle-temp.ics; then
               echo "Invalid ICS file format - missing BEGIN:VCALENDAR or END:VCALENDAR"
+              echo "Hustle-temp.ics: $(cat hustle-temp.ics)"
               rm hustle-temp.ics
               exit 1
             fi

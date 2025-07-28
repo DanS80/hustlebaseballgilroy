@@ -1,9 +1,9 @@
 <footer>
-    <p>&copy; <span id="currentYear"></span> Hustle Baseball. All rights reserved.</p>
+    <div class="footer-content">
+        <span>&copy; <span id="currentYear"></span> Hustle Baseball Gilroy. All rights reserved.</span>
+        <span>Tax ID: 30-1433334</span>
+    </div>
 </footer>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-        console.log("Footer year updated");
-    });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 </script>

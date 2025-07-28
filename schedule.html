@@ -65,6 +65,12 @@
         <img src="logo.png" alt="" class="background-logo">
         <section class="container">
             <h2>Schedule</h2>
+            <label for="team-schedule-filter">Filter by Team:</label>
+            <select id="team-schedule-filter">
+                <option value="all">All Teams</option>
+                <option value="10u">10U</option>
+                <option value="11u">11U</option>
+            </select>
             <!-- <div class="schedule-message">
                 <p>Nothing scheduled at this time.</p>
             </div> -->
@@ -93,80 +99,95 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,listMonth'
-                },
-                eventTimeFormat: {
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    meridiem: 'short',
-                    omitZeroMinute: false
-                },
-                displayEventEnd: true,  // Show end time
-                eventSources: [{
-                    url: '/hustle.ics',
-                    format: 'ics'
-                }],
-                loading: function(isLoading) {
-                    console.log('Calendar is ', isLoading ? 'loading events...' : 'finished loading events');
-                },
-                eventDidMount: function(info) {
-                    console.log('Event mounted:', info.event.title);
-                },
-                eventSourceFailure: function(error) {
-                    console.error('Error fetching events:', error);
-                    alert('Failed to load calendar events. Please try again later.');
-                },
-                eventClick: function(info) {
-                    var popup = document.getElementById('eventPopup');
-                    document.getElementById('eventTitle').textContent = info.event.title;
-                    
-                    // Format date and time together
-                    var dateTimeStr = info.event.start.toLocaleDateString('en-US', {
-                        weekday: 'long',
-                        month: 'long',
-                        day: 'numeric',
-                        year: 'numeric'
-                    });
-                    
-                    // Add time if it exists
-                    if (!info.event.allDay) {
-                        dateTimeStr += ' at ' + info.event.start.toLocaleTimeString('en-US', {
-                            hour: 'numeric',
-                            minute: '2-digit',
-                            hour12: true
+            var calendar;
+            var eventSources = {
+                'all': [
+                    { url: '/hustle-10u.ics', format: 'ics', id: '10u' },
+                    { url: '/hustle-11u.ics', format: 'ics', id: '11u' }
+                ],
+                '10u': [
+                    { url: '/hustle-10u.ics', format: 'ics', id: '10u' }
+                ],
+                '11u': [
+                    { url: '/hustle-11u.ics', format: 'ics', id: '11u' }
+                ]
+            };
+
+            function renderCalendar(team) {
+                if (calendar) {
+                    calendar.destroy();
+                }
+                calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,listMonth'
+                    },
+                    eventTimeFormat: {
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        meridiem: 'short',
+                        omitZeroMinute: false
+                    },
+                    displayEventEnd: true,
+                    eventSources: eventSources[team],
+                    loading: function(isLoading) {
+                        console.log('Calendar is ', isLoading ? 'loading events...' : 'finished loading events');
+                    },
+                    eventDidMount: function(info) {
+                        console.log('Event mounted:', info.event.title);
+                    },
+                    eventSourceFailure: function(error) {
+                        console.error('Error fetching events:', error);
+                        alert('Failed to load calendar events. Please try again later.');
+                    },
+                    eventClick: function(info) {
+                        var popup = document.getElementById('eventPopup');
+                        document.getElementById('eventTitle').textContent = info.event.title;
+                        var dateTimeStr = info.event.start.toLocaleDateString('en-US', {
+                            weekday: 'long',
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric'
                         });
-                        
-                        // Add end time if it exists
-                        if (info.event.end) {
-                            dateTimeStr += ' - ' + info.event.end.toLocaleTimeString('en-US', {
+                        if (!info.event.allDay) {
+                            dateTimeStr += ' at ' + info.event.start.toLocaleTimeString('en-US', {
                                 hour: 'numeric',
                                 minute: '2-digit',
                                 hour12: true
                             });
+                            if (info.event.end) {
+                                dateTimeStr += ' - ' + info.event.end.toLocaleTimeString('en-US', {
+                                    hour: 'numeric',
+                                    minute: '2-digit',
+                                    hour12: true
+                                });
+                            }
                         }
+                        document.getElementById('eventDateTime').textContent = dateTimeStr;
+                        document.getElementById('eventLocation').textContent = info.event.extendedProps.location || 'Location not specified';
+                        document.getElementById('eventDescription').textContent = info.event.extendedProps.description || 'No description available';
+                        popup.classList.add('show');
+                        document.addEventListener('click', function closeOnClickOutside(e) {
+                            if (!popup.contains(e.target) && !e.target.closest('.fc-event')) {
+                                popup.classList.remove('show');
+                                document.removeEventListener('click', closeOnClickOutside);
+                            }
+                        });
                     }
-                    
-                    document.getElementById('eventDateTime').textContent = dateTimeStr;
-                    document.getElementById('eventLocation').textContent = info.event.extendedProps.location || 'Location not specified';
-                    document.getElementById('eventDescription').textContent = info.event.extendedProps.description || 'No description available';
-                    popup.classList.add('show');
-                    
-                    // Close popup when clicking outside
-                    document.addEventListener('click', function closeOnClickOutside(e) {
-                        if (!popup.contains(e.target) && !e.target.closest('.fc-event')) {
-                            popup.classList.remove('show');
-                            document.removeEventListener('click', closeOnClickOutside);
-                        }
-                    });
-                }
+                });
+                calendar.render();
+                console.log('Calendar initialized for', team);
+            }
+
+            // Initial render
+            renderCalendar('all');
+
+            // Filter change
+            document.getElementById('team-schedule-filter').addEventListener('change', function() {
+                renderCalendar(this.value);
             });
-            calendar.render();
-            console.log('Calendar initialized');
         });
     </script>
 </body>

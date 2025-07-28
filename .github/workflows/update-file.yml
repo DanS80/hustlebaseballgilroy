@@ -10,50 +10,48 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set environment variable
-        run: echo "gc_token=${{ secrets.GC_TOKEN }}" >> $GITHUB_ENV
-      
-      - name: Download file
+      - name: Set environment variables
         run: |
-          curl -o hustle-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=8cceec49-6814-4a22-a7c9-e4e1955f810d&token=${{ env.gc_token }}"
+          echo "gc_token_11u=${{ secrets.GC_TOKEN_11U }}" >> $GITHUB_ENV
+          echo "gc_token_10u=${{ secrets.GC_TOKEN_10U }}" >> $GITHUB_ENV
       
-      - name: Remove DTSTAMP
-        run: sed -i '/^DTSTAMP:/d' hustle-temp.ics
-  
+      - name: Download 11U ICS file
+        run: |
+          curl -o hustle-11u-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=810f389e-3e8c-403b-83fa-54f652f45c37&token=${{ env.gc_token_11u }}"
+      
+      - name: Download 10U ICS file
+        run: |
+          curl -o hustle-10u-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=33d5f1bd-0c63-4819-b5b3-f2008a434daf&token=${{ env.gc_token_10u }}"
+      
+      - name: Remove DTSTAMP from 11U ICS
+        run: sed -i '/^DTSTAMP:/d' hustle-11u-temp.ics
+      
+      - name: Remove DTSTAMP from 10U ICS
+        run: sed -i '/^DTSTAMP:/d' hustle-10u-temp.ics
+      
       - name: Commit and push changes
         run: |
-          if cmp --silent hustle-temp.ics hustle.ics; then
-            echo "Files are the same"
-            rm hustle-temp.ics
-            exit 0
+          update_needed=false
+          if [ ! -f hustle-11u.ics ] || ! cmp --silent hustle-11u-temp.ics hustle-11u.ics; then
+            echo "11U ICS file changed"
+            mv hustle-11u-temp.ics hustle-11u.ics
+            update_needed=true
           else
-            # Validate ICS file format
-            if ! grep -q "^BEGIN:VCALENDAR" hustle-temp.ics || ! grep -q "^END:VCALENDAR" hustle-temp.ics; then
-              echo "Invalid ICS file format - missing BEGIN:VCALENDAR or END:VCALENDAR"
-              echo "Hustle-temp.ics: $(cat hustle-temp.ics)"
-              rm hustle-temp.ics
-              exit 1
-            fi
-            
-            # Check for required VEVENT components
-            if ! grep -q "^BEGIN:VEVENT" hustle-temp.ics; then
-              echo "Invalid ICS file format - no VEVENT components found"
-              rm hustle-temp.ics
-              exit 1
-            fi
-            
-            # Validate line endings (should be CRLF for ICS files)
-            if file hustle-temp.ics | grep -q "CRLF"; then
-              echo "ICS file has proper CRLF line endings"
-            else
-              echo "Warning: ICS file may not have proper CRLF line endings"
-            fi
-
-            echo "Files are different"
-            mv hustle-temp.ics hustle.ics
+            rm hustle-11u-temp.ics
+          fi
+          if [ ! -f hustle-10u.ics ] || ! cmp --silent hustle-10u-temp.ics hustle-10u.ics; then
+            echo "10U ICS file changed"
+            mv hustle-10u-temp.ics hustle-10u.ics
+            update_needed=true
+          else
+            rm hustle-10u-temp.ics
+          fi
+          if [ "$update_needed" = true ]; then
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
             git config --global user.name "github-actions[bot]"
-            git add hustle.ics
-            git commit -m "Update hustle.ics"
+            git add hustle-11u.ics hustle-10u.ics
+            git commit -m "Update 11U and/or 10U ICS files"
             git push
+          else
+            echo "No ICS updates needed."
           fi

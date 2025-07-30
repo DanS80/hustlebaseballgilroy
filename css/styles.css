@@ -407,6 +407,64 @@ button[type="submit"]:hover {
     font-size: 1.2em;
 }
 
+/* Modern Schedule Filter Styles */
+.schedule-filter-container {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid rgb(49, 140, 216);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-filter-container label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1em;
+}
+
+.schedule-filter-container select {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.schedule-filter-container select:focus {
+    outline: none;
+    border-color: rgb(49, 140, 216);
+    box-shadow: 0 0 0 3px rgba(49, 140, 216, 0.1);
+}
+
+.schedule-filter-container select:hover {
+    border-color: rgb(49, 140, 216);
+}
+
+@media (max-width: 768px) {
+    .schedule-filter-container {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .schedule-filter-container select {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;

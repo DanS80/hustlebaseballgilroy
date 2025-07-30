@@ -1,3 +1,14 @@
+
+## Open 11U Roster Spot Available
+
+##### *Posted on July 29, 2025*
+
+We still have an open spot on our 11U roster! If you're interested in joining our competitive local travel baseball team, please email us at info@hustlebaseballgilroy.org for more information.
+
+This is a great opportunity to be part of our growing baseball community in Gilroy. Don't miss out on this chance to develop your skills and compete at a higher level!
+
+------
+
 ## Hustle Baseball Tryouts Completed
 
 ##### *Posted on June 30, 2025*

@@ -309,9 +309,12 @@ footer {
 
 .coach-info {
     flex: 1;
+    margin-top: 0;
+    padding-top: 0;
 }
 
-.coach-info h3 {
+.coach-info h3,
+.coach-info h4 {
     margin-top: 0;
     color: #333;
 }
@@ -336,6 +339,7 @@ footer {
     .coach-photo {
         width: 100%;
         margin-bottom: 1rem;
+        margin-top: 1rem;
         margin-right: 0;
     }
 }
@@ -454,6 +458,7 @@ button[type="submit"]:hover {
     .coach-photo {
         width: 100%;
         margin-bottom: 1rem;
+        margin-top: 1rem;
         margin-right: 0;
     }
 

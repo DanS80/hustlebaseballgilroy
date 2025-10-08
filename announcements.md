@@ -1,4 +1,23 @@
 
+## NCS Tournament This Weekend in Salinas!
+
+##### *Posted on October 8, 2025*
+
+Get ready for an exciting weekend of baseball! Hustle Baseball is heading to Salinas this weekend to compete in the Beach Brawl in the Fall tournament hosted by National Championship Sports (NCS).
+
+Come out and support our teams as they take on some of the best competition in Northern California. It's going to be a great opportunity to showcase our talent and hustle!
+
+**Tournament Details:**
+- **Event:** Beach Brawl in the Fall
+- **When:** October 11-12, 2025
+- **Where:** Salinas Sports Complex, 1084 N Main St, Salinas, CA
+- **Organization:** National Championship Sports (NCS)
+- **More Info:** [View Tournament Details](https://playncs.com/baseball/Events/Details/11406/beach-brawl-in-the-fall)
+
+Good luck to all our players and coaches! Let's show them what Hustle Baseball is all about! ⚾
+
+------
+
 ## Open 11U Roster Spot Available
 
 ##### *Posted on July 29, 2025*

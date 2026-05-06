@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baseball Schedule - Hustle Baseball Gilroy | Travel Baseball Games & Tournaments</title>
-    <meta name="description" content="View Hustle Baseball's current schedule of games, practices, and tournaments. Stay updated on our Gilroy travel baseball team's upcoming events and game times.">
-    <meta name="keywords" content="baseball schedule, gilroy baseball schedule, travel baseball games, baseball tournaments, youth baseball schedule, gilroy travel baseball, baseball practices, game times">
+    <meta name="description"
+        content="View Hustle Baseball's current schedule of games, practices, and tournaments. Stay updated on our Gilroy travel baseball team's upcoming events and game times.">
+    <meta name="keywords"
+        content="baseball schedule, gilroy baseball schedule, travel baseball games, baseball tournaments, youth baseball schedule, gilroy travel baseball, baseball practices, game times">
     <meta name="author" content="Hustle Baseball">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hustlebaseballgilroy.org/schedule.html">
     <meta property="og:title" content="Baseball Schedule - Hustle Baseball Gilroy">
-    <meta property="og:description" content="View Hustle Baseball's current schedule of games, practices, and tournaments.">
+    <meta property="og:description"
+        content="View Hustle Baseball's current schedule of games, practices, and tournaments.">
     <meta property="og:image" content="https://hustlebaseballgilroy.org/logo3.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hustlebaseballgilroy.org/schedule.html">
     <meta property="twitter:title" content="Baseball Schedule - Hustle Baseball Gilroy">
-    <meta property="twitter:description" content="View Hustle Baseball's current schedule of games, practices, and tournaments.">
+    <meta property="twitter:description"
+        content="View Hustle Baseball's current schedule of games, practices, and tournaments.">
     <meta property="twitter:image" content="https://hustlebaseballgilroy.org/logo3.png">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://hustlebaseballgilroy.org/schedule.html">
-    
+
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.15/main.css' rel='stylesheet' />
     <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.15/main.css' rel='stylesheet' />
     <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.15/main.css' rel='stylesheet' />
     <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.15/main.css' rel='stylesheet' />
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -52,17 +57,18 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EK72WWNR3Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-EK72WWNR3Z');
+    gtag('config', 'G-EK72WWNR3Z');
 </script>
+
 <body>
     <div id="header"></div>
-    
+
     <div class="main-content-wrapper">
-        <img src="logo.png" alt="" class="background-logo">
+        <img src="logo.webp" alt="" class="background-logo" width="420" height="423">
         <section class="container">
             <h2>Schedule</h2>
             <div class="schedule-filter-container">
@@ -99,7 +105,7 @@
             document.getElementById('eventPopup').classList.remove('show');
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
             var calendar;
             var eventSources = {
@@ -134,17 +140,17 @@
                     },
                     displayEventEnd: true,
                     eventSources: eventSources[team],
-                    loading: function(isLoading) {
+                    loading: function (isLoading) {
                         console.log('Calendar is ', isLoading ? 'loading events...' : 'finished loading events');
                     },
-                    eventDidMount: function(info) {
+                    eventDidMount: function (info) {
                         console.log('Event mounted:', info.event.title);
                     },
-                    eventSourceFailure: function(error) {
+                    eventSourceFailure: function (error) {
                         console.error('Error fetching events:', error);
                         alert('Failed to load calendar events. Please try again later.');
                     },
-                    eventClick: function(info) {
+                    eventClick: function (info) {
                         var popup = document.getElementById('eventPopup');
                         document.getElementById('eventTitle').textContent = info.event.title;
                         var dateTimeStr = info.event.start.toLocaleDateString('en-US', {
@@ -187,10 +193,11 @@
             renderCalendar('all');
 
             // Filter change
-            document.getElementById('team-schedule-filter').addEventListener('change', function() {
+            document.getElementById('team-schedule-filter').addEventListener('change', function () {
                 renderCalendar(this.value);
             });
         });
     </script>
 </body>
+
 </html>

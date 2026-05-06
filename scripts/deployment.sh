@@ -11,12 +11,17 @@ python3 image_resize.py
 echo "Generating image index..."
 python3 generate_image_index.py
 
+# Update sitemap timestamps
+echo "Updating sitemap..."
+python3 update_sitemap.py
+
 # Add and commit the changes if git is present
 if [ -d "../.git" ]; then
     echo "Committing changes..."
     git add ../photos/image-index.json
-    git add ../photos/*.jpg
-    git commit -m "Update photos and index"
+    git add ../photos/*.webp
+    git add ../sitemap.xml
+    git commit -m "Update photos, index, and sitemap"
     
     # Ask about pushing changes
     read -p "Do you want to push changes to remote? (y/N) " push_changes

@@ -19,7 +19,7 @@ def generate_image_index():
 
         # Get all image files in this team directory
         image_files = []
-        for ext in ['*.jpg', '*.jpeg', '*.png', '*.gif']:
+        for ext in ['*.webp', '*.jpg', '*.jpeg', '*.png', '*.gif']:
             image_files.extend(list(team_path.glob(ext)))
             image_files.extend(list(team_path.glob(ext.upper())))
 

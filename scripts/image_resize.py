@@ -19,7 +19,7 @@ def resize_and_save_images(image_directory, max_width=1024, max_height=800):
     skipped = 0
 
     for filename in os.listdir(image_directory):
-        if not filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+        if not filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.webp')):
             continue
 
         filepath = os.path.join(image_directory, filename)
@@ -32,10 +32,11 @@ def resize_and_save_images(image_directory, max_width=1024, max_height=800):
             img = Image.open(filepath)
             width, height = img.size
             needs_resize = width > max_width or height > max_height
-            needs_conversion = img.format != 'JPEG'
-
+            # Check if it's already WebP
+            is_webp = img.format == 'WEBP'
+            
             # Skip if already the right size and format
-            if not needs_resize and not needs_conversion and filename.lower().endswith('.jpg'):
+            if not needs_resize and is_webp:
                 print(f"✓ Skipped (already optimized): {filename} ({width}x{height})")
                 skipped += 1
                 continue
@@ -51,23 +52,23 @@ def resize_and_save_images(image_directory, max_width=1024, max_height=800):
                 print(f"↓ Resizing: {filename} from {width}x{height} to {new_width}x{new_height}")
                 resized += 1
 
-            # Convert to RGB if needed (for PNG/GIF with transparency)
-            if img.mode in ('RGBA', 'LA', 'P'):
-                img = img.convert('RGB')
-
-            # Save as JPG
-            new_filename = os.path.splitext(filename)[0] + ".jpg"
+            # Convert to RGB if needed (WebP supports transparency, but let's be safe for photos)
+            # Actually WebP handles RGBA fine, so we can keep transparency if present
+            # But for photos, usually we don't need it. Let's keep it simple.
+            
+            # Save as WebP
+            new_filename = os.path.splitext(filename)[0] + ".webp"
             new_filepath = os.path.join(image_directory, new_filename)
 
-            img.save(new_filepath, "JPEG", optimize=True, quality=85)
+            img.save(new_filepath, "WEBP", quality=85)
 
-            if needs_conversion:
+            if not is_webp:
                 print(f"→ Converted: {filename} to {new_filename}")
                 converted += 1
             else:
                 print(f"✓ Saved: {new_filename}")
 
-            # Remove old file if format changed
+            # Remove old file if format changed (e.g. jpg -> webp)
             if filename != new_filename and os.path.exists(filepath):
                 os.remove(filepath)
                 print(f"✗ Removed: {filename}")

@@ -1,4 +1,29 @@
 
+## Summer/Fall 2026 Tryouts - May 21st!
+
+##### *Posted on May 6, 2026*
+
+Registration is now open for our Summer/Fall 2026 travel ball season, and tryouts are right around the corner!
+
+**Tryout Details:**
+- **When:** Thursday, May 21st, 2026 from 5:30-7:30 PM
+- **Where:** Las Animas Veterans Park - Majors Softball Field
+- **Address:** 4400 Mantelli Drive, Gilroy, CA 95020
+- **Divisions:** 11U and 12U
+- **What to bring:** Bat, helmet, glove, and cleats are required
+
+**Age requirements:**
+- **11U:** Born on or after May 1, 2015
+- **12U:** Born on or after May 1, 2014
+
+**Registration is required.** Email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org) with your child's name and the age level they're trying out for, or [sign up online here](signup.html).
+
+We can't wait to see you on the field! ⚾
+
+<img src="/images/summer-fall-2026-tryouts.webp" alt="Summer/Fall 2026 Tryouts - May 21st, 2026" width="500" class="announcement-image">
+
+------
+
 ## NCS Tournament This Weekend in Salinas!
 
 ##### *Posted on October 8, 2025*
@@ -54,7 +79,7 @@ We will be at Gilroy Sports Park from 6-8pm, on the A2 field (the field to the r
 
 If you have any questions at all, please reach out to us at tryouts@hustlebaseballgilroy.org and we will get back to you ASAP!
 
-<img src="/images/fall-2025-tryouts.png" alt="Fall 2025 Tryouts" width="500" class="announcement-image">
+<img src="/images/fall-2025-tryouts.webp" alt="Fall 2025 Tryouts" width="500" class="announcement-image">
 
 
 

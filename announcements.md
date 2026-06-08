@@ -1,4 +1,29 @@
 
+## Second Tryouts - Wednesday, June 10th!
+
+##### *Posted on June 7, 2026*
+
+Didn't make it to our first tryout? Here's your chance! We're holding a **second tryout** for our Summer/Fall 2026 travel ball season. Registration is still open!
+
+**Tryout Details:**
+- **When:** Wednesday, June 10th, 2026 from 5:30-7:30 PM
+- **Where:** Paradise Park - Softball Field
+- **Address:** 365-399 La Crosse Dr, Morgan Hill, CA 95037
+- **Divisions:** 11U and 12U
+- **What to bring:** Bat, helmet, glove, and cleats are required
+
+**Age requirements:**
+- **11U:** Born on or after May 1, 2015
+- **12U:** Born on or after May 1, 2014
+
+**Registration is required.** Email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org) with your child's name and the age level they're trying out for, or [sign up online here](signup.html).
+
+We can't wait to see you on the field! ⚾
+
+<img src="/images/summer-fall-2026-tryouts-2.webp" alt="Second Tryouts - Wednesday, June 10th, 2026" width="500" class="announcement-image">
+
+------
+
 ## Summer/Fall 2026 Tryouts - May 21st!
 
 ##### *Posted on May 6, 2026*
